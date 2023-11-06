@@ -1,0 +1,117 @@
+*{
+    margin: 0%;
+    font-family: 'Roboto';
+}
+
+.textEditorbg{
+    height: 100vh;
+    width: 100%;
+}
+
+.navOptions{
+    height: 6%;
+    width: 100%;
+    color: white;
+    background-color: rgb(15, 2, 27);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navOptions p{
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navOptions button{
+    height: 70%;
+    width: 10%;
+    font-weight: bold;
+    background-color: rgb(94, 160, 94);
+    outline: none;
+    border-radius: 6px;
+    border: none;
+    margin-right: 1rem;
+    font-size: 1rem;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.navOptions button:hover{
+    background-color: rgb(81, 139, 81);
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+}
+
+.rowCode{
+    width: 5%;
+    padding-top: 0.5%;
+    background-color: rgb(35, 4, 65);
+}
+
+.rowCode p{
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 0.3rem;
+    font-family: 'Roboto';
+    color: white;
+    font-weight: bold;
+}
+
+.textEditor{
+    width: 100%;
+    height: 94%;
+    display: flex;
+}
+
+.textEditor textarea{
+    padding-top: 0.8%;
+    background-color: rgb(35, 4, 65);
+    color: white;
+    line-height: 1.5rem;
+    width: 65%;
+    min-height: 90%;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    font-family: 'Roboto';
+    resize: none;
+}
+
+.codeSnap{
+    width: 30%;
+    height: 100%;
+    background-color: rgb(60, 5, 110);
+    overflow: auto;
+    box-shadow: 1px 1px 10px 1px black;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+
+.codeStruct{
+    width: 80%;
+    height: 80%;
+}
+
+.codeSnap p{
+    align-items: start;
+}
+
+.nameType{
+    color: chartreuse;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.struct{
+    color: thistle;
+    font-weight: bold;
+}

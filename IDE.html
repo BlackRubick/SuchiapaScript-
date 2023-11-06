@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  type="text/css" rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>SuchiapaScript </title>
+</head>
+<body>
+
+<div class="textEditorbg">
+    <div class="navOptions">
+        <p>SuchiapaScript</p>
+        <button onclick="validateCode()">Run code</button>
+    </div>
+    <div class="textEditor">
+        <div id="rowCode" class="rowCode">
+        </div>
+        <textarea id="codeInput"></textarea>
+        <div class="codeSnap">
+            <div class="codeStruct">    
+                <p class="nameType">Variables:</p>
+                <p class="struct">edad->20</p>
+                <br>    
+                <p class="nameType">Funciones:</p>
+                <p class="struct">act saludo (){<br> &ensp;mensaje = "Perrito , " + nombre + "!" <br> &ensp;devuelto mensaje <br>}</p>
+                <br>    
+                <p class="nameType">Ciclo:</p>
+                <p class="struct">vos i en (1, 6){<br>&ensp;mostralo(i)<br>}</p>
+                <br>
+                <p class="nameType">Condicional:</p>
+                <p class="struct">ira edad >= 18 { <br>&ensp;mostralo("gol") <br>} tons {<br> &ensp;mostralo("no gol") <br>}</p>
+                <br>
+                <p class="nameType">Main:</p>
+                <p class="struct">act main (){ <br> }</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="validator.js"></script>
+</body>
+</html>
+ 
