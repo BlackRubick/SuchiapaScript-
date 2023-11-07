@@ -2,18 +2,18 @@ function validateCode() {
     const code = document.getElementById('codeInput').value.split('\n');
 
     const tokens = {
-        'variableDeclaration': /(\w+)->\s*("[^"]+"|\d+)/,
-        'functionDeclaration': /act\s+(\w+)\s*\(.*\)\s*\{/,
+        'variableDeclaration': /(\b[^\d\s]+\b)->\s*("[^"]+"|\d+)/,
+        'functionDeclaration': /act\s+(\w+)\s*\(\s*([a-zA-Z]+\s*(,\s*[a-zA-Z]+)*)?\s*\)\s*\{/,
         'forLoop': /vos\s+\w+\s+en\s+\(\d+,\s*\d+\)\s*\{/,
-        'conditional': /ira\s+.+\s*\{/,
+        'conditional': /ira\s+.+\s*\{\s*.*\s*\}|\s*ira\s+.+\s*\{/,
+        'conditional': /ira\s+\w+\s*(>=|<=|==|!= |<|>|)\s*\d+\s*\{/,
         'elseStatement': /tons\s*\{/,
         'returnStatement': /devuelto\s+.+/,
-        'printStatement': /mostralo\(.+\)/,
+        'printStatement': /mostralo\(("(?:[^"\\]|\\.)*")\)/,
         'closeBlock': /\}/,
         'assignment': /\w+\s*=\s*.+/
     };
 
-    
     let openBlocks = 0;
     let wasIra = false;
     const declaredFunctions = new Set();
@@ -66,7 +66,12 @@ function validateCode() {
     }
 
     if (openBlocks !== 0) {
-        alert("ey vos hija  tenes un error : Falta cerrar uno o más bloques.");
+        alert("ey vos hija  tenes un error: Falta cerrar uno o más bloques.");
+        return;
+    }
+
+    if (wasIra) {
+        alert("ey vos hija  tenes un error: Falta el bloque 'tons' después de un bloque 'ira'.");
         return;
     }
 
@@ -76,6 +81,7 @@ document.getElementById('codeInput').oninput = function() {
     rows();
 }
 
+// Contador de líneas en el HTML
 const rows = () => {
     const code = document.getElementById('codeInput').value.split('\n');
     const rowContainer = document.getElementById('rowCode');
